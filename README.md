@@ -15,4 +15,4 @@ HyBrid Provider consumes advanced and mixed option for app state management in f
 
 ## Notice
 
-Documentation will coming soon
+Documentation will come soon
