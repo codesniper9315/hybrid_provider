@@ -1,6 +1,6 @@
 name: hybrid_provider
 description: This package provides hybrid consumer (BLoC + Change Notifier) for app state management.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/flutterdev9715/hybrid_provider.git
 
 environment:
