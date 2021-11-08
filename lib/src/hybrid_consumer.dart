@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-part 'hybrid_state.dart';
-
-class HybridConsumer<T extends ChangeNotifier, S extends HybridState>
+class HybridConsumer<T extends ChangeNotifier, S extends ChangeNotifier>
     extends StatefulWidget {
   const HybridConsumer({
     Key? key,
@@ -20,7 +18,7 @@ class HybridConsumer<T extends ChangeNotifier, S extends HybridState>
   State<HybridConsumer<T, S>> createState() => _HybridConsumerState<T, S>();
 }
 
-class _HybridConsumerState<T extends ChangeNotifier, S extends HybridState>
+class _HybridConsumerState<T extends ChangeNotifier, S extends ChangeNotifier>
     extends State<HybridConsumer<T, S>> {
   late T _provider;
   late S _state;
