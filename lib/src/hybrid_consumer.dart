@@ -23,7 +23,7 @@ class _HybridConsumerState<T extends ChangeNotifier, S extends ChangeNotifier>
   late T _provider;
   late S _state;
 
-  _providerListener() {
+  _onChangeState() {
     if (widget.listener != null) {
       widget.listener!(_provider, _state);
     }
@@ -32,15 +32,16 @@ class _HybridConsumerState<T extends ChangeNotifier, S extends ChangeNotifier>
   @override
   void initState() {
     super.initState();
-    _state = context.read<S>();
     _provider = context.read<T>();
-    _provider.addListener(_providerListener);
+    _state = context.read<S>();
+    _state.addListener(_onChangeState);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<T>(
-      builder: (context, value, child) => widget.builder(value, _state, child),
+    return Consumer<S>(
+      builder: (context, value, child) =>
+          widget.builder(_provider, value, child),
       child: widget.child,
     );
   }
