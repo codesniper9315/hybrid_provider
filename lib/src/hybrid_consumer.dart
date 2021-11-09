@@ -38,6 +38,12 @@ class _HybridConsumerState<T extends ChangeNotifier, S extends ChangeNotifier>
   }
 
   @override
+  void dispose() {
+    _state.removeListener(_onChangeState);
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Consumer<S>(
       builder: (context, value, child) =>
