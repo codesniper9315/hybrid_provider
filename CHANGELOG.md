@@ -13,3 +13,7 @@
 ## 0.0.4
 
 * Added HybridProvider
+
+## 0.0.5
+
+* keep the listener when dispose the widget tree
